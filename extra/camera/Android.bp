@@ -20,7 +20,6 @@ android_app_import {
 	owner: "sony",
 	apk: "PhotoPro/PhotoPro.apk",
 	presigned: true,
-	overrides: ["Aperture"],
 	dex_preopt: {
 		enabled: false,
 	},
