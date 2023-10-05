@@ -16,11 +16,11 @@
 #
 
 # 360RA Path
-UPMIX_FILES += vendor/sony/extra-sagami/extra/threesixtyra
+UPMIX_FILES += vendor/sony/extra-yodo/extra/threesixtyra
 
 # Soong Namespace
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/sony/extra-sagami/extra/threesixtyra
+    vendor/sony/extra-yodo/extra/threesixtyra
 
 # Packages
 PRODUCT_PACKAGES += \
