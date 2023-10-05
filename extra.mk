@@ -14,15 +14,21 @@
 # limitations under the License.
 #
 
+ifneq ($(TARGET_SONY_EXTRA_PATH),)
+EXTRA_PATH := $(TARGET_SONY_EXTRA_PATH)
+else
+EXTRA_PATH := vendor/sony/extra
+endif
+
 # Soong Namespace
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/sony/extra-sagami
+    $(EXTRA_PATH)
 
 # Dolby Sound
-    $(call inherit-product, vendor/sony/extra-sagami/extra/dolby/dolby.mk)
+    $(call inherit-product, vendor/sony/extra-yodo/extra/dolby/dolby.mk)
 
 # ThreeSixtyRA Upmix Lite
-    $(call inherit-product, vendor/sony/extra-sagami/extra/threesixtyra/upmix.mk)
+    $(call inherit-product, vendor/sony/extra-yodo/extra/threesixtyra/upmix.mk)
 
 # Sony Framework
 PRODUCT_COPY_FILES += \
@@ -31,10 +37,10 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/extra/framework/product/,$(TARGET_COPY_OUT_PRODUCT)/)
 
 # Sony Camera
-    $(call inherit-product, vendor/sony/extra-sagami/extra/camera/camera.mk)
+    $(call inherit-product, vendor/sony/extra-yodo/extra/camera/camera.mk)
 
 # Sony Apps
-    $(call inherit-product, vendor/sony/extra-sagami/extra/apps/apps.mk)
+    $(call inherit-product, vendor/sony/extra-yodo/extra/apps/apps.mk)
 
 # Game Controllers
  PRODUCT_COPY_FILES += \
